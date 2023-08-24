@@ -8,5 +8,21 @@
 </div>
 
 <div class="body-content">
-  
+  <?php
+    //Se obtiene el valor de la URL
+    $opcion = $_GET['opcion'];
+    if ($opcion != NULL) {
+      switch ($opcion) {
+        case 'configuracion':
+          require '../php/informacion/configuracion.php';
+          break;
+        case 'productos':
+          require '../php/pages/productos.php';
+          break;
+        case 'dashboard':
+          require '../php/contenido/dashboard.php';
+          break;
+      }
+    }
+  ?>
 </div>

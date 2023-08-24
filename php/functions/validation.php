@@ -1,4 +1,5 @@
 <?php
+  require '../../variables.php';
   require 'conn.php';
 
   // Obtención de los valores del formulario de login
@@ -23,7 +24,7 @@
     if($conn->query($sql_registro_ingreso)) {
       session_start();
       $_SESSION['ID_USUARIO'] = $id_user;
-      header('Location: ../app.php');
+      header('Location: ../app.php?opcion=dashboard');
     }else{
       header('Location: ../../index.php');
     }

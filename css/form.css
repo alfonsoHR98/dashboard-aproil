@@ -98,6 +98,34 @@ ul {
   margin: 0 0 1rem 0;
 }
 
+.contact-info img {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 16px;
+  margin: 0 14px 0 12px;
+  background: #1d1b31;
+  transition: all 0.5s ease;
+}
+
+.contact-info form input {
+  width: 100%;
+  padding: .7em;
+  border: none;
+  background: none;
+  outline: 0;
+  color: #fff;
+  border-bottom: 1px solid #d63031;
+}
+
+.actualizar {
+  background: #B70E21;
+  border: 0;
+  text-transform: uppercase;
+  padding: 1em;
+}
+
+
 /* LARGE SIZE */
 @media(min-width: 700px) {
   body {

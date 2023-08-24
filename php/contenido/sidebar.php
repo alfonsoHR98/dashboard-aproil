@@ -1,3 +1,11 @@
+<?php
+  require_once './functions/conn.php';
+  $id_user = $_SESSION['ID_USUARIO'];
+  $sql_foto = "SELECT imagen FROM usuarios WHERE id_usuario = '$id_user'";
+  $valor_foto = $conn->query($sql_foto);
+  $foto = $valor_foto->fetch_assoc();
+?>
+
 <!-- Div de logo-->
 <div class="logo-details">
   <i class='bx bx-package' ></i>
@@ -9,28 +17,23 @@
 
   <!-- Link unitario-->
   <li>
-    <a href="#">
+    <a href="../php/app.php?opcion=dashboard">
       <i class='bx bx-grid-alt' ></i>
       <span class="link_name">Dashboard</span>
     </a>
     <ul class="sub-menu blank">
-      <li><a class="link_name" href="../../php/app.php">Dashboard</a></li>
+      <li><a class="link_name" href="../php/app.php?opcion=dashboard">Dashboard</a></li>
     </ul>
   </li>
 
-  <!-- Link Anidado -->
+  <!-- Link unitario-->
   <li>
-    <div class="iocn-link">
-      <a href="#">
-        <i class='bx bxs-cube'></i>
-        <span class="link_name">Productos</span>
-      </a>
-      <i class='bx bxs-chevron-down arrow' ></i>
-    </div>
-    <ul class="sub-menu">
-      <li><a class="link_name" href="#">Productos</a></li>
-      <li><a href="../../php/registros/registroProductos.php">Registro</a></li>
-      <li><a href="#">Información y edición</a></li>
+    <a href="../php/app.php?opcion=productos">
+      <i class='bx bxs-cube'></i>
+      <span class="link_name">Productos</span>
+    </a>
+    <ul class="sub-menu blank">
+      <li><a class="link_name" href="../php/app.php?opcion=productos">Productos</a></li>
     </ul>
   </li>
 
@@ -45,8 +48,8 @@
     </div>
     <ul class="sub-menu">
       <li><a class="link_name" href="#">Proveedores</a></li>
-      <li><a href="#">Registro</a></li>
-      <li><a href="#">Información y edición</a></li>
+      <li><a href="../php/app.php?opcion=proveedores-registro">Registro</a></li>
+      <li><a href="../php/app.php?opcion=proveedores-informacion">Información y edición</a></li>
     </ul>
   </li>
 
@@ -61,8 +64,8 @@
     </div>
     <ul class="sub-menu">
       <li><a class="link_name" href="#">Clientes</a></li>
-      <li><a href="#">Registro</a></li>
-      <li><a href="#">Información y edición</a></li>
+      <li><a href="../php/app.php?opcion=clientes-registro">Registro</a></li>
+      <li><a href="../php/app.php?opcion=clientes-informacion">Información y edición</a></li>
     </ul>
   </li>
 
@@ -77,8 +80,8 @@
     </div>
     <ul class="sub-menu">
       <li><a class="link_name" href="#">Ventas</a></li>
-      <li><a href="#">Venta</a></li>
-      <li><a href="#">Información de venta</a></li>
+      <li><a href="../php/app.php?opcion=../php/app.php?opcion=venta">Venta</a></li>
+      <li><a href="../php/app.php?opcion=ventas-detalles">Información de venta</a></li>
     </ul>
   </li>
 
@@ -123,12 +126,12 @@
 
   <!-- Link unitario -->
   <li>
-    <a href="#">
+    <a href="../php/app.php?opcion=configuracion">
       <i class='bx bx-cog' ></i>
       <span class="link_name">Setting</span>
     </a>
     <ul class="sub-menu blank">
-      <li><a class="link_name" href="#">Setting</a></li>
+      <li><a class="link_name" href="../php/app.php?opcion=configuracion">Setting</a></li>
     </ul>
   </li>
   
@@ -136,7 +139,7 @@
   <li>
     <div class="profile-details">
       <div class="profile-content">
-        <img src="img/hash.jpg" alt="profileImg">
+        <img src="data:image/jpg;base64,<?php echo base64_encode($foto['imagen']); ?>" alt="profileImg">
       </div>
       <div class="name-job">
         <div class="profile_name">Alfonso</div>
@@ -148,3 +151,4 @@
 
 <!-- Fin de la lista de links -->
 </ul>
+

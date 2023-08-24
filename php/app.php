@@ -1,3 +1,7 @@
+<?php 
+  session_start();
+  require '../variables.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
