@@ -9,14 +9,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-  <link rel="stylesheet" href="/css/login.css">
+  <link rel="stylesheet" href="css/login.css">
   <title>Aproil</title>
 </head>
 <body>
   <section>
     <div class="login-box">
       <form method="POST" action="./php/functions/validation.php">
-        <h2>Login</h2>
+        <h2>Aproil</h2>
         <div class="input-box">
           <span class="icon"><i class='bx bx-user'></i></span>
           <input type="text" name="user" id="user" required>

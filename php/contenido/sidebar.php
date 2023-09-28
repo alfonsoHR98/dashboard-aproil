@@ -1,9 +1,12 @@
 <?php
   require_once './functions/conn.php';
   $id_user = $_SESSION['ID_USUARIO'];
+  
+  // Obtener la imagen del usuario
   $sql_foto = "SELECT imagen FROM usuarios WHERE id_usuario = '$id_user'";
   $valor_foto = $conn->query($sql_foto);
   $foto = $valor_foto->fetch_assoc();
+ 
 ?>
 
 <!-- Div de logo-->
@@ -37,35 +40,25 @@
     </ul>
   </li>
 
-  <!-- Link anidado -->
+  <!-- Link unitario-->
   <li>
-    <div class="iocn-link">
-      <a href="#">
-        <i class='bx bxs-truck'></i>
-        <span class="link_name">Proveedores</span>
-      </a>
-      <i class='bx bxs-chevron-down arrow' ></i>
-    </div>
-    <ul class="sub-menu">
-      <li><a class="link_name" href="#">Proveedores</a></li>
-      <li><a href="../php/app.php?opcion=proveedores-registro">Registro</a></li>
-      <li><a href="../php/app.php?opcion=proveedores-informacion">Información y edición</a></li>
+    <a href="../php/app.php?opcion=proveedores">
+      <i class='bx bxs-truck'></i>
+      <span class="link_name">Proveedores</span>
+    </a>
+    <ul class="sub-menu blank">
+      <li><a class="link_name" href="../php/app.php?opcion=proveedores">Proveedores</a></li>
     </ul>
   </li>
 
-  <!-- Link anidado -->
+  <!-- Link unitario-->
   <li>
-    <div class="iocn-link">
-      <a href="#">
-        <i class='bx bxs-user-detail'></i>
-        <span class="link_name">Clientes</span>
-      </a>
-      <i class='bx bxs-chevron-down arrow' ></i>
-    </div>
-    <ul class="sub-menu">
-      <li><a class="link_name" href="#">Clientes</a></li>
-      <li><a href="../php/app.php?opcion=clientes-registro">Registro</a></li>
-      <li><a href="../php/app.php?opcion=clientes-informacion">Información y edición</a></li>
+    <a href="../php/app.php?opcion=clientes">
+      <i class='bx bxs-user-detail' ></i>
+      <span class="link_name">Clientes</span>
+    </a>
+    <ul class="sub-menu blank">
+      <li><a class="link_name" href="../php/app.php?opcion=clientes">Clientes</a></li>
     </ul>
   </li>
 

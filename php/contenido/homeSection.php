@@ -1,6 +1,3 @@
-<link rel="stylesheet" href="../../css/body.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-<link rel="stylesheet" href="../../css/form.css">
 
 <div class="home-content">
   <i class='bx bx-menu' ></i>
@@ -8,21 +5,27 @@
 </div>
 
 <div class="body-content">
-  <?php
-    //Se obtiene el valor de la URL
-    $opcion = $_GET['opcion'];
-    if ($opcion != NULL) {
-      switch ($opcion) {
-        case 'configuracion':
-          require '../php/informacion/configuracion.php';
-          break;
-        case 'productos':
-          require '../php/pages/productos.php';
-          break;
-        case 'dashboard':
-          require '../php/contenido/dashboard.php';
-          break;
-      }
+<?php
+    // Obtén el valor de la variable 'opcion' desde la URL
+    $opcion = isset($_GET['opcion']) ? $_GET['opcion'] : 'inicio';
+
+    // Define un array de opciones disponibles y sus correspondientes archivos PHP
+    $opciones_disponibles = [
+        'configuracion' => '../php/informacion/configuracion.php',
+        'productos' => '../php/pages/productos.php',
+        'dashboard' => '../php/contenido/dashboard.php',
+        'proveedores' => '../php/pages/proveedores.php',
+        'clientes' => '../php/pages/clientes.php',
+    ];
+
+    // Verifica si la opción solicitada existe en el array
+    if (array_key_exists($opcion, $opciones_disponibles)) {
+        // Incluye la opción correspondiente
+        require $opciones_disponibles[$opcion];
+    } else {
+        // Página no encontrada, puedes redirigir a una página de error 404
+        header('HTTP/1.0 404 Not Found');
+        echo 'Opción no encontrada';
     }
   ?>
 </div>

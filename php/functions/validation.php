@@ -24,9 +24,9 @@
     if($conn->query($sql_registro_ingreso)) {
       session_start();
       $_SESSION['ID_USUARIO'] = $id_user;
-      header('Location: ../app.php?opcion=dashboard');
+      header("Location: ../app.php?opcion=dashboard");
     }else{
-      header('Location: ../../index.php');
+      header("Location: ../../index.php");
     }
   }
 ?>

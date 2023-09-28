@@ -73,7 +73,23 @@ ul {
   transition: all 0.5s ease;
 }
 
-.contact-form form button {
+.contact-form form .button {
+  background: #B70E21;
+  border: 0;
+  text-transform: uppercase;
+  padding: 1em;
+}
+
+.contact-form form .button:hover,
+.contact-form form .button:focus {
+  background: #d63031;
+  color: #fff;
+  transition: background-color 1s ease-out;
+  outline: 0;
+}
+
+.contact-form form button,
+.contact-form form .button {
   background: #B70E21;
   border: 0;
   text-transform: uppercase;
@@ -81,11 +97,22 @@ ul {
 }
 
 .contact-form form button:hover,
+.contact-form form .button:hover,
+.contact-form form .button:focus,
 .contact-form form button:focus {
   background: #d63031;
   color: #fff;
   transition: background-color 1s ease-out;
   outline: 0;
+}
+
+table tbody img {
+  height: 52px;
+  width: 52px;
+  object-fit: cover;
+  border-radius: 16px;
+  margin: 0 14px 0 12px;
+  background: #1d1b31;
 }
 
 /* CONTACT INFO */
@@ -143,4 +170,136 @@ ul {
   .contact-info p {
       text-align: left;
   }
+}
+
+/* MODAL */
+
+#modal::backdrop {
+  background-color: rgba(0, 0, 0, 0.55);
+}
+
+#modal {
+  position: absolute;
+  top: 100px;
+  background: transparent;
+  border: none;
+}
+
+#btn-cerrar-modal {
+  margin-right: 10px;
+  width: 25px;
+  height: 25px;
+  border-radius: 20px;
+  background: #B70E21;
+  color: #fff;
+}
+
+#btn-cerrar-modal:hover,
+#btn-cerrar-modal:focus {
+  background: #d63031;
+  color: #fff;
+  transition: background-color 1s ease-out;
+  outline: 0;
+  cursor: pointer;
+}
+
+#btn-abrir-modal {
+  font-size: 2em;
+  width: 50px;
+  height: 35px;
+  border-radius: 25px;
+  background: #11101d;
+  border: none;
+  color: #fff;
+  text-align: center;
+  cursor: pointer;
+  top: -10px;
+}
+
+.header-form {
+  display: flex;
+  flex-direction: row;
+}
+
+.buscador {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.buscador input {
+  padding: .7em;
+  width: 40%;
+  border: none;
+  background: none;
+  outline: 0;
+  color: #11101d;
+  border-bottom: 1px solid #d63031;
+}
+
+.buscador i {
+  height: 50px;
+  min-width: 78px;
+  text-align: center;
+  line-height: 50px;
+  color: #11101d;
+  font-size: 20px;
+}
+
+.information-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.information-content::-webkit-scrollbar {
+  width: .5rem;
+  height: .5rem;
+}
+
+.information-content::-webkit-scrollbar-thumb {
+  border-radius: .5rem;
+  background-color: #0004;
+  visibility: hidden;
+}
+
+.information-content:hover::-webkit-scrollbar-thumb {
+  visibility: visible;
+}
+
+table, th, td {
+  margin-top: 15px;
+  border-collapse: collapse;
+  padding: 1rem;
+  text-align: center;
+}
+
+thead th {
+  top: 0;
+  left: 0;
+  background: #11101d;
+  color: #fff;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #0000000b;
+}
+
+tbody tr:hover {
+  background-color: #f1f0f8fe;
+}
+
+table tbody tr td #btn-abrir-editar{
+  background-color: #0021da;
+  color: #fff;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+table tbody tr td #btn-abrir-eliminar{
+  background-color: #da0000;
+  color: #fff;
+  border-radius: 5px;
+  padding: 5px;
 }
